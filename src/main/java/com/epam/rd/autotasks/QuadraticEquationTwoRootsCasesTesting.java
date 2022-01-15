@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 
 @RunWith(Parameterized.class)
 public class QuadraticEquationTwoRootsCasesTesting {
@@ -29,14 +30,17 @@ public class QuadraticEquationTwoRootsCasesTesting {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {1, -7, 12, "3.0 4.0"},
-                {1, -7, 12, "3.0 4.0"},
-                {1, -7, 12, "3.0 4.0"},
-                {1, -7, 12, "3.0 4.0"}});
+                {1, -5, 6, "2.0 3.0"},
+                {1, -3, 2, "1.0 2.0"},
+                {1, 2, -3, "-3.0 1.0"}});
 
     }
     @Test
     public void testTwoRootsCase() {
-        assertEquals(expected, quadraticEquation.solve(a, b, c));
+        double x1 = Double.parseDouble(expected.split(" ")[0]);
+        double x2 = Double.parseDouble(expected.split(" ")[1]);
+        String result = quadraticEquation.solve(a, b, c);
+        assertTrue(result.equals(x1 + " " + x2) || result.equals(x2 + " " + x1));
     }
 
 }
