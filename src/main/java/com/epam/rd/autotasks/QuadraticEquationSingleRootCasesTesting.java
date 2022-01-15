@@ -28,7 +28,7 @@ public class QuadraticEquationSingleRootCasesTesting {
         return Arrays.asList(new Object[][] {
             {1,-6,9,3},
             {1,4,4,-2},
-            {1,6,9-3},
+            {1,6,9,-3},
             {1,2,1,-1}});
 
         }
